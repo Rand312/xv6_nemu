@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "cld.h": "c",
+        "template-start.h": "c",
+        "helper.h": "c",
+        "nemu.h": "c",
+        "template-end.h": "c",
+        "outs.h": "c",
+        "port-io.h": "c",
+        "sdl.h": "c",
+        "vga.h": "c",
+        "hal.h": "c",
+        "common.h": "c",
+        "sdl_events.h": "c"
+    }
+}
