@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "limits": "c",
-        "memlayout.h": "c",
-        "template-end.h": "c"
-    }
-}

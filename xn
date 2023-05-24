@@ -1,0 +1,36 @@
+#!/bin/bash
+
+curdir=$(pwd)
+
+echo $curdir
+
+start(){
+    cd $curdir/xv6
+    make
+    ./trans.sh
+    cd $curdir/nemu
+    make run
+}
+
+clean(){
+    cd $curdir/xv6
+    make clean
+    cd $curdir/nemu
+    make clean
+}
+
+case "$1" in 
+    start)
+        start
+    ;;
+    clean)
+        clean
+    ;;
+    *)
+        echo "Usage: xn {start|clean}" >&2
+        exit 3
+    ;;
+esac
+
+exit 0
+ 
