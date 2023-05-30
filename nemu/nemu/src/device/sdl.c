@@ -40,15 +40,15 @@ static void timer_sig_handler(int signum) {
 extern uint8_t intr_NO;
 
 void device_update() {
-	// if(!device_update_flag) {
-	// 	return;
-	// }
-	// device_update_flag = false;
+	if(!device_update_flag) {
+		return;
+	}
+	device_update_flag = false;
 
-	// if(update_screen_flag) {
-	// 	update_screen();
-	// 	update_screen_flag = false;
-	// }
+	if(update_screen_flag) {
+		update_screen();
+		update_screen_flag = false;
+	}
 
 	SDL_Event event;
 	while(SDL_PollEvent(&event)) {
