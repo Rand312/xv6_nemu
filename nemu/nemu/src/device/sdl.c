@@ -59,7 +59,7 @@ void device_update() {
 			// if(cpu.IF == 0)
 			// 	break;
 			keyboard_intr(sym2scancode[sym >> 8][sym & 0xff]);
-			break;
+			// break;
 		}
 		else if( event.type == SDL_KEYUP ) {
 			// if(cpu.IF == 0 && intr_NO == 33){
@@ -68,7 +68,7 @@ void device_update() {
 			// }
 				
 			keyboard_intr(sym2scancode[sym >> 8][sym & 0xff] | 0x80);
-			break;
+			// break;
 		}
 
 		// If the user has Xed out the window
