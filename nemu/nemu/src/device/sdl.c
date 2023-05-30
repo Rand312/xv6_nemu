@@ -14,6 +14,8 @@ SDL_Surface *real_screen;
 SDL_Surface *screen;
 uint8_t (*pixel_buf) [SCREEN_COL];
 
+extern bool newkey;
+
 #define TIMER_HZ 100
 
 static uint64_t jiffy = 0;
@@ -40,14 +42,18 @@ static void timer_sig_handler(int signum) {
 extern uint8_t intr_NO;
 
 void device_update() {
-	if(!device_update_flag) {
-		return;
-	}
-	device_update_flag = false;
+	// if(!device_update_flag) {
+	// 	return;
+	// }
+	// device_update_flag = false;
 
-	if(update_screen_flag) {
-		update_screen();
-		update_screen_flag = false;
+	// if(update_screen_flag) {
+	// 	update_screen();
+	// 	update_screen_flag = false;
+	// }
+
+	if(newkey){
+		return;
 	}
 
 	SDL_Event event;
@@ -59,7 +65,7 @@ void device_update() {
 			// if(cpu.IF == 0)
 			// 	break;
 			keyboard_intr(sym2scancode[sym >> 8][sym & 0xff]);
-			// break;
+			break;
 		}
 		else if( event.type == SDL_KEYUP ) {
 			// if(cpu.IF == 0 && intr_NO == 33){
@@ -68,7 +74,7 @@ void device_update() {
 			// }
 				
 			keyboard_intr(sym2scancode[sym >> 8][sym & 0xff] | 0x80);
-			// break;
+			break;
 		}
 
 		// If the user has Xed out the window

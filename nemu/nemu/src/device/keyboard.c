@@ -6,7 +6,7 @@
 #define KEYBOARD_IRQ 1
 
 static uint8_t *i8042_data_port_base;
-static bool newkey;
+bool newkey;
 
 void keyboard_intr(uint8_t scancode) {
 	if(nemu_state == RUNNING && newkey == false) {
