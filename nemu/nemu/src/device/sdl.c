@@ -115,7 +115,7 @@ void init_sdl() {
 	ret = sigaction(SIGVTALRM, &s, NULL);
 	Assert(ret == 0, "Can not set signal handler");
 
-	it.it_value.tv_sec = 0;
+	it.it_value.tv_sec = 10;
 	it.it_value.tv_usec = 1000000 / TIMER_HZ;
 	ret = setitimer(ITIMER_VIRTUAL, &it, NULL);
 	Assert(ret == 0, "Can not set timer");
