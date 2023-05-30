@@ -9,7 +9,8 @@ xv6: https://pdos.csail.mit.edu/6.828/2018/labguide.html
 
 ## 运行
 1. clone 代码
-2. ./test.sh
+2. ./xn start 执行代码
+3. ./xn clean 清理环境
 
 Note: 
 
