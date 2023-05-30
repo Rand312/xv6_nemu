@@ -17,6 +17,8 @@ clean(){
     make clean
     cd $curdir/nemu
     make clean
+
+    rm entry-xv6 kernel-xv6 fs.img
 }
 
 case "$1" in 
